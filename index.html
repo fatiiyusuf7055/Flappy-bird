@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+  <title>Flappy Bird 🐦</title>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.9.0/p5.min.js"></script>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div id="game-container">
+    <!-- Écran d'accueil -->
+    <div id="menu" class="screen active">
+      <h1>🐦 Flappy Bird</h1>
+
+      <div class="difficulty-selector">
+        <div class="diff-btn" data-diff="easy">
+          <span class="diff-label">Facile</span>
+          <span class="stars">⭐☆☆</span>
+        </div>
+        <div class="diff-btn" data-diff="normal">
+          <span class="diff-label">Normal</span>
+          <span class="stars">⭐⭐☆</span>
+        </div>
+        <div class="diff-btn" data-diff="hard">
+          <span class="diff-label">Difficile</span>
+          <span class="stars">⭐⭐⭐</span>
+        </div>
+      </div>
+
+      <div class="menu-buttons">
+        <button id="btn-play" class="main-btn">▶ Jouer</button>
+        <button id="btn-settings" class="secondary-btn">⚙ Paramètres</button>
+      </div>
+
+      <p class="best-score">🏆 Meilleur score : <span id="menu-best">0</span></p>
+    </div>
+
+    <!-- Écran paramètres -->
+    <div id="settings" class="screen">
+      <h2>⚙ Paramètres</h2>
+
+      <div class="setting-group">
+        <label>Thème :</label>
+        <div class="theme-btns">
+          <button class="theme-btn" data-theme="classic">☀ Classique</button>
+          <button class="theme-btn" data-theme="space">🚀 Espace</button>
+          <button class="theme-btn" data-theme="night">🌙 Nuit</button>
+          <button class="theme-btn" data-theme="sunset">🌅 Coucher</button>
+        </div>
+      </div>
+
+      <div class="setting-group">
+        <label>Son : <input type="checkbox" id="sound-toggle" checked></label>
+      </div>
+
+      <div class="setting-group">
+        <label>Particules : <input type="checkbox" id="particles-toggle" checked></label>
+      </div>
+
+      <div class="setting-group">
+        <label>Mode jour/nuit auto : <input type="checkbox" id="daynight-toggle" checked></label>
+      </div>
+
+      <button id="btn-back" class="main-btn">⬅ Retour</button>
+    </div>
+
+    <!-- Écran Game Over -->
+    <div id="gameover" class="screen">
+      <h2>💥 Game Over</h2>
+      <p>Score : <span id="final-score">0</span></p>
+      <p>Meilleur : <span id="best-score">0</span></p>
+      <div class="menu-buttons">
+        <button id="btn-retry" class="main-btn">🔄 Rejouer</button>
+        <button id="btn-home" class="secondary-btn">🏠 Menu</button>
+      </div>
+    </div>
+
+    <!-- Overlay Pause -->
+    <div id="pause-overlay">
+      <h2>⏸ Pause</h2>
+      <p>Appuie sur P ou touche le bouton pour reprendre</p>
+    </div>
+
+    <!-- Bouton Pause mobile -->
+    <button id="pause-btn" title="Pause">⏸</button>
+  </div>
+</body>
+</html>
